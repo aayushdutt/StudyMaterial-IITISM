@@ -30,6 +30,7 @@ submitButton.addEventListener("click", function(e) {
     fetch(URL)
       .then(data => data.json())
       .then(fetchedData => {
+        API_DATA = fetchedData;
         var matchedData = getMatchedData(inputValues, fetchedData);
 
         if (matchedData.length === 0) {
