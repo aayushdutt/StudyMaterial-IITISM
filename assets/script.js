@@ -4,6 +4,7 @@ const inputs = document.querySelectorAll(".control");
 const submitButton = document.querySelector("button.button");
 const fail = document.querySelector("#fail");
 const pass = document.querySelector("#pass");
+const loading = document.querySelector("#loading");
 
 new Tablesort(document.getElementById("table-id"));
 
@@ -12,6 +13,7 @@ submitButton.addEventListener("click", function(e) {
   var inputValues = getInputValues();
   pass.classList.add("hidden");
   fail.classList.add("hidden");
+  loading.classList.remove("hidden");
 
   fetch(URL)
     .then(data => data.json())
@@ -20,6 +22,7 @@ submitButton.addEventListener("click", function(e) {
       var matchedData = getMatchedData(inputValues, fetchedData);
 
       if (matchedData.length === 0) {
+        loading.classList.add("hidden");
         fail.classList.remove("hidden");
         return;
       }
@@ -68,7 +71,7 @@ function insertRow(data) {
 
   var newCell = newRow.insertCell(0);
   var a = document.createElement("a");
-  a.className += " button is-success";
+  a.className += " button";
   var linkText = document.createTextNode("Download");
   a.appendChild(linkText);
   a.title = "Download";
@@ -96,5 +99,6 @@ function insertRows(matchedData) {
   matchedData.forEach(paper => {
     insertRow(paper);
   });
+  loading.classList.add("hidden");
   pass.classList.remove("hidden");
 }

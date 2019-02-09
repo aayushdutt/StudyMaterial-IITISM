@@ -99,40 +99,37 @@
             </p>
           </div>
 
-          <div id="fail" class="hidden">
-            <h1 class="title">Couldn't find any papers.</h1>
-            <h1 class="subtitle">Consider submitting</h1>
-          </div>
+          <div class="result">
+            <div id="fail" class="hidden">
+              <h1 class="title">Couldn't find any papers.</h1>
+              <h1 class="subtitle">
+                Have study material? Submit
+                <a href="https://goo.gl/forms/AYqEKAQ8uNwNo8ZZ2">here</a>
+              </h1>
+            </div>
 
-          <div id="pass" class="">
-            <h1 class="title">Papers</h1>
-            <table
-              class="table is-striped  is-hoverable is-fullwidth"
-              id="table-id"
-            >
-              <thead>
-                <tr>
-                  <th>Subject</th>
-                  <th>Type</th>
-                  <th>Semester</th>
-                  <th>Year</th>
-                  <th>Download</th>
-                </tr>
-              </thead>
-              <tbody id="table-body">
-                <tr>
-                  <td>Eleven</td>
-                  <td>Eleven</td>
-                  <td>Twelve</td>
-                  <td>Twelve</td>
-                  <td>
-                    <button class="button">
-                      Download
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div id="loading" class="hidden">
+              <h1 class="subtitle">Loading...</h1>
+            </div>
+
+            <div id="pass" class="hidden">
+              <h1 class="title">Papers</h1>
+              <table
+                class="table is-striped  is-hoverable is-fullwidth"
+                id="table-id"
+              >
+                <thead>
+                  <tr>
+                    <th>Subject</th>
+                    <th>Type</th>
+                    <th>Semester</th>
+                    <th>Year</th>
+                    <th>Download</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
           </div>
 
           <!-- CONTAINER END -->

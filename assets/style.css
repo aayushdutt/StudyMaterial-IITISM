@@ -59,8 +59,9 @@ p.subtitle {
 table {
   font-size: 20px;
 }
+
 .links a {
-  color: white;
+  color: #ff4e56;
 }
 
 table th {
@@ -71,10 +72,15 @@ table button {
   width: auto;
 }
 
-button.button {
+button.button,
+a.button {
   color: white;
   background-color: #ff4e56;
 }
 .hidden {
   display: none;
+}
+
+.result {
+  margin-top: 20px;
 }
