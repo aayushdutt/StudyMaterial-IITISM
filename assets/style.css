@@ -43,3 +43,15 @@ p.subtitle {
 .dropdown.is-hoverable .dropdown-trigger button {
   width: 100%;
 }
+
+.card .card-content p.title {
+  color: #444;
+}
+
+table {
+  margin-top: 75px;
+}
+
+table th {
+  cursor: pointer;
+}
