@@ -4,17 +4,25 @@ body {
   font-size: 14px;
   font-weight: 300;
 }
-.hero.is-success {
-  background: #f2f6fa;
+.hero {
+  background-color: #f5f7fa;
+  color: #dfe2d2;
+}
+.hero .title,
+.hero .subtitle {
+  color: #8c9ba5;
 }
 .hero .nav,
 .hero.is-success .nav {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
 .box {
   margin-top: 5rem;
+  box-shadow: 0 8px 27px -5px #888;
 }
+
 .avatar {
   margin-top: -70px;
   padding-bottom: 20px;
@@ -22,7 +30,7 @@ body {
 .avatar img {
   width: 100px;
   padding: 5px;
-  background: #eee;
+  background: #dfe2d2;
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),
     0 0 0 1px rgba(10, 10, 10, 0.1);
@@ -45,13 +53,28 @@ p.subtitle {
 }
 
 .card .card-content p.title {
-  color: #444;
+  color: #dfe2d2;
 }
 
 table {
-  margin-top: 75px;
+  font-size: 20px;
+}
+.links a {
+  color: white;
 }
 
 table th {
   cursor: pointer;
+}
+
+table button {
+  width: auto;
+}
+
+button.button {
+  color: white;
+  background-color: #ff4e56;
+}
+.hidden {
+  display: none;
 }

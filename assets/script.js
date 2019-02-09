@@ -2,17 +2,29 @@ const URL = "https://api.sheety.co/4d6ce4fa-451d-4b6f-b4fb-55c7fffd999c";
 
 const inputs = document.querySelectorAll(".control");
 const submitButton = document.querySelector("button.button");
+const fail = document.querySelector("#fail");
+const pass = document.querySelector("#pass");
+
+new Tablesort(document.getElementById("table-id"));
 
 submitButton.addEventListener("click", function(e) {
   e.preventDefault();
   var inputValues = getInputValues();
+  pass.classList.add("hidden");
+  fail.classList.add("hidden");
 
-  var apiData;
   fetch(URL)
     .then(data => data.json())
     .then(fetchedData => {
-      apiData = fetchedData;
-      getMatchedData(inputValues, apiData);
+      removeExistingRows();
+      var matchedData = getMatchedData(inputValues, fetchedData);
+
+      if (matchedData.length === 0) {
+        fail.classList.remove("hidden");
+        return;
+      }
+
+      insertRows(matchedData);
     });
 });
 
@@ -39,6 +51,50 @@ function getMatchedData(inputData, apiData) {
       matchedData.push(paper);
   });
 
-  console.log(matchedData);
+  return matchedData;
 }
-new Tablesort(document.getElementById("table-id"));
+
+function removeExistingRows() {
+  var length = document.getElementById("table-id").rows.length;
+
+  for (var i = 1; i < length; i++) {
+    document.getElementById("table-id").deleteRow(i);
+  }
+}
+
+function insertRow(data) {
+  var tableRef = document.getElementById("table-body");
+  var newRow = tableRef.insertRow(tableRef.rows.length);
+
+  var newCell = newRow.insertCell(0);
+  var a = document.createElement("a");
+  a.className += " button is-success";
+  var linkText = document.createTextNode("Download");
+  a.appendChild(linkText);
+  a.title = "Download";
+  a.href = data.uploadPaper;
+  newCell.appendChild(a);
+
+  var newCell = newRow.insertCell(0);
+  var newText = document.createTextNode(data.year);
+  newCell.appendChild(newText);
+
+  var newCell = newRow.insertCell(0);
+  var newText = document.createTextNode(data.semester);
+  newCell.appendChild(newText);
+
+  var newCell = newRow.insertCell(0);
+  var newText = document.createTextNode(data.type);
+  newCell.appendChild(newText);
+
+  var newCell = newRow.insertCell(0);
+  var newText = document.createTextNode(data.subject);
+  newCell.appendChild(newText);
+}
+
+function insertRows(matchedData) {
+  matchedData.forEach(paper => {
+    insertRow(paper);
+  });
+  pass.classList.remove("hidden");
+}
