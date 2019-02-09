@@ -25,6 +25,7 @@ function handleInputChange(e) {
   var inputValues = getInputValues();
   pass.classList.add("hidden");
   fail.classList.add("hidden");
+  if (!inputValues.semester) return;
   loading.classList.remove("hidden");
   removeExistingRows();
 
