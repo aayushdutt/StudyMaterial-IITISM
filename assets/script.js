@@ -5,6 +5,8 @@ const submitButton = document.querySelector("button.button");
 const fail = document.querySelector("#fail");
 const pass = document.querySelector("#pass");
 const loading = document.querySelector("#loading");
+const inputsFields = document.querySelectorAll("input");
+const dropdown = document.querySelector("select");
 
 new Tablesort(document.getElementById("table-id"));
 
@@ -18,7 +20,7 @@ function initialFetch() {
     });
 }
 
-submitButton.addEventListener("click", function(e) {
+function handleInputChange(e) {
   e.preventDefault();
   var inputValues = getInputValues();
   pass.classList.add("hidden");
@@ -51,13 +53,18 @@ submitButton.addEventListener("click", function(e) {
 
     insertRows(matchedData);
   }
-});
+}
+
+// submitButton.addEventListener("click", e => handleInputChange(e));
+dropdown.addEventListener("change", e => handleInputChange(e));
+inputsFields[0].addEventListener("keyup", e => handleInputChange(e));
+inputsFields[1].addEventListener("keyup", e => handleInputChange(e));
 
 function getInputValues() {
   var inputValues = {
     branch: inputs[0].children[0].value,
-    year: inputs[1].children[0].value,
-    semester: inputs[2].children[0].value
+    semester: inputs[1].children[0].value,
+    year: inputs[2].children[0].value
   };
 
   return inputValues;
@@ -67,14 +74,37 @@ function getMatchedData(inputData, apiData) {
   console.log(inputData, apiData);
   var { branch, year, semester } = inputData;
   var matchedData = [];
-  apiData.forEach(paper => {
-    if (
-      paper.branch === branch &&
-      paper.year == year &&
-      paper.semester == semester
-    )
-      matchedData.push(paper);
-  });
+
+  if (semester == 1 || semester == 2) {
+    if (!year) {
+      apiData.forEach(paper => {
+        if (paper.semester == semester) matchedData.push(paper);
+      });
+    } else {
+      apiData.forEach(paper => {
+        if (paper.year == year && paper.semester == semester)
+          matchedData.push(paper);
+      });
+
+      return matchedData;
+    }
+  }
+
+  if (!year) {
+    apiData.forEach(paper => {
+      if (paper.branch === branch && paper.semester == semester)
+        matchedData.push(paper);
+    });
+  } else {
+    apiData.forEach(paper => {
+      if (
+        paper.branch === branch &&
+        paper.year == year &&
+        paper.semester == semester
+      )
+        matchedData.push(paper);
+    });
+  }
 
   return matchedData;
 }

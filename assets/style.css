@@ -21,8 +21,11 @@ body {
 .box {
   margin-top: 5rem;
   box-shadow: 0 8px 27px -5px #888;
+  padding-bottom: 35px;
 }
-
+form .field {
+  margin-bottom: 18px !important;
+}
 .avatar {
   margin-top: -70px;
   padding-bottom: 20px;

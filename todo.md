@@ -7,3 +7,4 @@
 3. Autoload on filling Semester
 4. Add Offline Capability (sw.js)
 5. Change Font Style
+6. Make Year Optional
