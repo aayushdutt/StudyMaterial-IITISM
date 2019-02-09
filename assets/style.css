@@ -60,6 +60,12 @@ table {
   font-size: 20px;
 }
 
+@media only screen and (max-width: 900px) {
+  table {
+    font-size: 14px;
+  }
+}
+
 .links a {
   color: #ff4e56;
 }

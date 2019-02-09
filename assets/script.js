@@ -83,10 +83,6 @@ function insertRow(data) {
   newCell.appendChild(newText);
 
   var newCell = newRow.insertCell(0);
-  var newText = document.createTextNode(data.semester);
-  newCell.appendChild(newText);
-
-  var newCell = newRow.insertCell(0);
   var newText = document.createTextNode(data.type);
   newCell.appendChild(newText);
 
