@@ -8,27 +8,48 @@ const loading = document.querySelector("#loading");
 
 new Tablesort(document.getElementById("table-id"));
 
+var API_DATA;
+initialFetch();
+function initialFetch() {
+  fetch(URL)
+    .then(data => data.json())
+    .then(fetchedData => {
+      API_DATA = fetchedData;
+    });
+}
+
 submitButton.addEventListener("click", function(e) {
   e.preventDefault();
   var inputValues = getInputValues();
   pass.classList.add("hidden");
   fail.classList.add("hidden");
   loading.classList.remove("hidden");
+  removeExistingRows();
 
-  fetch(URL)
-    .then(data => data.json())
-    .then(fetchedData => {
-      removeExistingRows();
-      var matchedData = getMatchedData(inputValues, fetchedData);
+  if (!API_DATA) {
+    fetch(URL)
+      .then(data => data.json())
+      .then(fetchedData => {
+        var matchedData = getMatchedData(inputValues, fetchedData);
 
-      if (matchedData.length === 0) {
-        loading.classList.add("hidden");
-        fail.classList.remove("hidden");
-        return;
-      }
+        if (matchedData.length === 0) {
+          loading.classList.add("hidden");
+          fail.classList.remove("hidden");
+          return;
+        }
+        insertRows(matchedData);
+      });
+  } else {
+    var matchedData = getMatchedData(inputValues, API_DATA);
 
-      insertRows(matchedData);
-    });
+    if (matchedData.length === 0) {
+      loading.classList.add("hidden");
+      fail.classList.remove("hidden");
+      return;
+    }
+
+    insertRows(matchedData);
+  }
 });
 
 function getInputValues() {
@@ -58,10 +79,9 @@ function getMatchedData(inputData, apiData) {
 }
 
 function removeExistingRows() {
-  var length = document.getElementById("table-id").rows.length;
-
-  for (var i = 1; i < length; i++) {
-    document.getElementById("table-id").deleteRow(i);
+  var tableBody = document.getElementById("table-body");
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
   }
 }
 
