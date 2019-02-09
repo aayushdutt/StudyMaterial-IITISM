@@ -96,7 +96,7 @@ function insertRow(data) {
   var linkText = document.createTextNode("Download");
   a.appendChild(linkText);
   a.title = "Download";
-  a.href = data.uploadPaper;
+  a.href = data.uploadStudyMaterial;
   newCell.appendChild(a);
 
   var newCell = newRow.insertCell(0);
