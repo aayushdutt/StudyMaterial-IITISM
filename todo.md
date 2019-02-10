@@ -10,3 +10,4 @@
     <!-- 6. Make Year Optional -->
     <!-- 4.  Compress and resize image -->
 4.  Add Gulp, sass and a templating engine.
+5.  Fix Dropdown Styling

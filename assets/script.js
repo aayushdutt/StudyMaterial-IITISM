@@ -1,7 +1,6 @@
 const URL = "https://api.sheety.co/4d6ce4fa-451d-4b6f-b4fb-55c7fffd999c";
 
 const inputs = document.querySelectorAll(".control");
-const submitButton = document.querySelector("button.button");
 const fail = document.querySelector("#fail");
 const pass = document.querySelector("#pass");
 const loading = document.querySelector("#loading");
@@ -56,7 +55,6 @@ function handleInputChange(e) {
   }
 }
 
-// submitButton.addEventListener("click", e => handleInputChange(e));
 dropdown.addEventListener("change", e => handleInputChange(e));
 inputsFields[0].addEventListener("keyup", e => handleInputChange(e));
 inputsFields[1].addEventListener("keyup", e => handleInputChange(e));
@@ -72,7 +70,6 @@ function getInputValues() {
 }
 
 function getMatchedData(inputData, apiData) {
-  console.log(inputData, apiData);
   var { branch, year, semester } = inputData;
   var matchedData = [];
 
@@ -86,9 +83,9 @@ function getMatchedData(inputData, apiData) {
         if (paper.year == year && paper.semester == semester)
           matchedData.push(paper);
       });
-
-      return matchedData;
     }
+
+    return matchedData;
   }
 
   if (!year) {
