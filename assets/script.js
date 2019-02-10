@@ -78,11 +78,11 @@ function getMatchedData(inputData, apiData) {
   if (semester == 1 || semester == 2) {
     if (!year) {
       apiData.forEach(paper => {
-        if (paper.semester == semester) matchedData.push(paper);
+        if (paper.semester == 1 || paper.semester == 2) matchedData.push(paper);
       });
     } else {
       apiData.forEach(paper => {
-        if (paper.year == year && paper.semester == semester)
+        if (paper.year == year && (paper.semester == 1 || paper.semester == 2) ) 
           matchedData.push(paper);
       });
     }
