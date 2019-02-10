@@ -57,7 +57,9 @@ function handleInputChange(e) {
 
 dropdown.addEventListener("change", e => handleInputChange(e));
 inputsFields[0].addEventListener("keyup", e => handleInputChange(e));
+inputsFields[0].addEventListener("change", e => handleInputChange(e));
 inputsFields[1].addEventListener("keyup", e => handleInputChange(e));
+inputsFields[1].addEventListener("change", e => handleInputChange(e));
 
 function getInputValues() {
   var inputValues = {
