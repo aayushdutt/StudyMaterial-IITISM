@@ -1,4 +1,4 @@
-const URL = "https://api.sheety.co/4d6ce4fa-451d-4b6f-b4fb-55c7fffd999c";
+const URL = "https://api.sheety.co/988469ba-2db3-4442-9c64-2a6cf398a2fd";
 
 const inputs = document.querySelectorAll(".control");
 const fail = document.querySelector("#fail");
