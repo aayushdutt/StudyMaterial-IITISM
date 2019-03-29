@@ -87,6 +87,25 @@ a.button {
   background-color: #c51f5d;
   border: 0;
 }
+
+
+a.button.upload {
+  color: #c51f5d;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #c51f5d;
+  border-radius: 3px;
+}
+
+a.button:hover {
+  color: #9d184a;
+  border: 1px solid #9d184a;
+}
+
+a.button:focus {
+  border-color: #c51f5d;
+  box-shadow: inset 0 1px 2px rgba(197,31,93,0.7);
+}
+
 .hidden {
   display: none;
 }

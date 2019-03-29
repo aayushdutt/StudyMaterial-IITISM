@@ -104,25 +104,20 @@
               </form>
             </div>
             <p class="links">
-              <a href="https://goo.gl/forms/vVhRlaKZSr4Bv17b2">
-                Submit
-              </a>
-              &nbsp;·
-              &nbsp;
-              <a href="mailto:cyberlabs@iitism.ac.in">Need Help?</a>
-            </p>
+                <a class='upload button is-outlined' href="https://goo.gl/forms/vVhRlaKZSr4Bv17b2">Upload Study Material</a>
+              </p>
+              (Must be logged in with institute email)
+              <br />
             <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
           </div>
 
           <div class="result">
             <div id="fail" class="hidden">
-              <h1 class="title">Couldn't find any papers.</h1>
+              <h1 class="title">Couldn't find anything.</h1>
               <h1 class="subtitle">
                 Have study material? 
+                <a href="https://goo.gl/forms/vVhRlaKZSr4Bv17b2">Upload</a>
               </h1>
-              <a class='button' href="https://goo.gl/forms/vVhRlaKZSr4Bv17b2">Submit here</a>
-              <br />
-              (Must be logged in with institute email)
             </div>
 
             <div id="loading" class="hidden">
@@ -140,7 +135,7 @@
                     <th>Subject &#x21e3;</th>
                     <th>Type &#x21e3;</th>
                     <th>Year  &#x21e3;</th>
-                    <th>Download</th>
+                    <th id='download-header'>Download</th>
                   </tr>
                 </thead>
                 <tbody id="table-body"></tbody>
