@@ -5,12 +5,12 @@ body {
   font-weight: 300;
 }
 .hero {
-  background-color: #f5f7fa;
+  background-color: #141d26;
   color: #dfe2d2;
 }
 .hero .title,
 .hero .subtitle {
-  color: #8c9ba5;
+  color: #fff;
 }
 .hero .nav,
 .hero.is-success .nav {
@@ -33,7 +33,7 @@ form .field {
 .avatar img {
   width: 100px;
   padding: 5px;
-  background: #dfe2d2;
+  background: rgba(197,31,93,0.7);
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),
     0 0 0 1px rgba(10, 10, 10, 0.1);
@@ -69,8 +69,8 @@ table {
   }
 }
 
-.links a {
-  color: #ff4e56;
+.links a, a {
+  color: #c51f5d;
 }
 
 table th {
@@ -84,7 +84,8 @@ table button {
 button.button,
 a.button {
   color: white;
-  background-color: #ff4e56;
+  background-color: #c51f5d;
+  border: 0;
 }
 .hidden {
   display: none;
@@ -92,4 +93,13 @@ a.button {
 
 .result {
   margin-top: 20px;
+}
+
+.fb-share-button {
+  margin-top: 10px;
+}
+
+.input:focus {
+  border-color: #c51f5d;
+  box-shadow: inset 0 1px 2px rgba(197,31,93,0.5);
 }

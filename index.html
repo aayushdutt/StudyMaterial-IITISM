@@ -17,13 +17,15 @@
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
     <section class="hero is-fullheight">
       <div class="hero-body">
         <div class="container has-text-centered">
           <div class="column is-4 is-offset-4">
-            <h3 class="title">Study Material</h3>
+            <h3 class="title">Search Study Material</h3>
             <p class="subtitle">
-              A place to find previous Notes and Previous Year Question Papers
+              
             </p>
             <div class="box">
               <figure class="avatar">
@@ -103,22 +105,24 @@
             </div>
             <p class="links">
               <a href="https://goo.gl/forms/vVhRlaKZSr4Bv17b2">
-                Submit Papers!
+                Submit
               </a>
-              &nbsp;·&nbsp;
-              <a href="#">Share with friends</a> &nbsp;·
+              &nbsp;·
               &nbsp;
               <a href="mailto:cyberlabs@iitism.ac.in">Need Help?</a>
             </p>
+            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
           </div>
 
           <div class="result">
             <div id="fail" class="hidden">
               <h1 class="title">Couldn't find any papers.</h1>
               <h1 class="subtitle">
-                Have study material? Submit
-                <a href="https://goo.gl/forms/vVhRlaKZSr4Bv17b2">here</a>
+                Have study material? 
               </h1>
+              <a class='button' href="https://goo.gl/forms/vVhRlaKZSr4Bv17b2">Submit here</a>
+              <br />
+              (Must be logged in with institute email)
             </div>
 
             <div id="loading" class="hidden">
