@@ -33,7 +33,7 @@ form .field {
 .avatar img {
   width: 100px;
   padding: 5px;
-  background: rgba(197,31,93,0.7);
+  background: rgba(197,31,93,1);
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),
     0 0 0 1px rgba(10, 10, 10, 0.1);
