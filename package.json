@@ -1,0 +1,28 @@
+{
+  "name": "StudyMaterial-IITISM",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-purifycss": "^0.2.0",
+    "gulp-rename": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "purify": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aayushdutt/StudyMaterial-IITISM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aayushdutt/StudyMaterial-IITISM/issues"
+  },
+  "homepage": "https://github.com/aayushdutt/StudyMaterial-IITISM#readme"
+}
