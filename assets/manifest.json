@@ -1,0 +1,17 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Study Material IIT (ISM)",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "https://studymaterial.netlify.com/",
+  "short_name": "Study Material ",
+  "theme_color": "#141d26",
+  "description": "A place to search and upload study materials",
+  "orientation": "any",
+  "background_color": "#141d26",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "generated": "true",
+  "icons": []
+}
